@@ -3,14 +3,12 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# Define your API key
 
-# Define your API key
+# Define API key
 apikey = "testkey"
 
-# Define your route and API function
 
-# Define your route and API function
+# Define route and API function
 @app.route('/boredom')
 def random_string():
     # Api key aunthentiffication
