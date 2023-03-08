@@ -54,7 +54,7 @@ def neverhaveiever():
 
     print(random_line)
 
-    file.close()
+    file.close()w
     return random_line
 
 
