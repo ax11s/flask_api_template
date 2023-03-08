@@ -23,12 +23,14 @@ def random_string():
         lines = file.readlines()
 
     index = random.randint(0, len(lines))
+    print(index)
     index = index - 1
     random_line = lines[index]
 
     print(random_line)
 
     file.close()
+    return random_line
 
 
 if __name__ == '__main__':
