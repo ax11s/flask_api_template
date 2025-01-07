@@ -4,14 +4,13 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 
-# Define API key
 apikey = "testkey"
 
 
-# Define route and API function
+# API function and route
 @app.route('/boredom')
 def random_string():
-    # Api key aunthentiffication
+
     reckey = request.headers.get('key')
     
     if reckey != apikey:
@@ -33,17 +32,13 @@ def random_string():
     return random_line
 
 
-# Define route and API function
 @app.route('/neverhaveiever')
 def neverhaveiever():
-    # Api key aunthentiffication
     reckey = request.headers.get('key')
     
     if reckey != apikey:
         return jsonify({'error': 'Invalid API key'}), 401
     
-
-    #getting the string
     with open("neverhaveiever.txt", "r") as file:
         lines = file.readlines()
 
@@ -58,7 +53,7 @@ def neverhaveiever():
     return random_line
 
 
-
+# curl -H "key:testkey" http://127.0.0.1:5000/boredom
 
 if __name__ == '__main__':
     app.run()
